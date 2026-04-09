@@ -5,9 +5,10 @@ import { ForkKnife } from 'lucide-react';
 
 const genrateHash = async (password) => {
     const salt = await bcrypt.genSalt(10);
-    const hash = await bcrypt.hash(password, salt);
+    const hash = await bcrypt.hash(`${password}`, salt);
     return hash;
 }
+
 
 const compareHash = async (password, hashPassword) => {
     const isMatch = await bcrypt.compare(password, hashPassword);

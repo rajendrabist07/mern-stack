@@ -94,7 +94,7 @@ async function signup(req, res) {
 
         let user = await User.findOne({ email })
         if (user) {
-            res.status(400).json({ message: "User already exists" })
+            return res.status(400).json({ message: "User already exists" })
         }
 
         const hashedpassword = await genrateHash(password);

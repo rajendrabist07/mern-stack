@@ -13,6 +13,7 @@ app.post('/api/signup', signup);
 app.post('/api/login', login);
 
 app.use(authorization);
+
 app.get('/api/user', getUsers);
 app.post('/api/user', createUser);
 app.delete('/api/user/:id', deleteUser);
