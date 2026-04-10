@@ -24,7 +24,7 @@ const generateAuthToken = (user) => {
         name: user.name
     }
 
-    return jwt.sign(data, privateKey, { expiresIn: '1h' });
+    return jwt.sign(data, privateKey, { expiresIn: '1d' });
 
 }
 

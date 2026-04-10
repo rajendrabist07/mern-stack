@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken";
 async function getUsers(req, res) {
     try {
         const skip = parseInt(req.query.skip) || 0;
-        const limit = parseInt(req.query.limit) || 10;
+        const limit = parseInt(req.query.limit) || 100;
         const users = await User.find().skip(skip).limit(limit);
         res.status(200).json(users);
     }

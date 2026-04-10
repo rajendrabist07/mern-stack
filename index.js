@@ -3,11 +3,15 @@ import { getUsers, createUser, deleteUser, patchUser, putUser, signup, login } f
 import mongoose from 'mongoose'
 import cors from 'cors'
 import authorization from './middleware/authorization.js'
+import { createTask, getTasks } from './controllers/task.js'
 
 const app = express()
 
 app.use(express.json())
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({
+    origin: '*', // or your frontend URL
+    allowedHeaders: ['Content-Type', 'Authorization', 'auth_token']
+}));
 
 app.post('/api/signup', signup);
 app.post('/api/login', login);
@@ -19,6 +23,9 @@ app.post('/api/user', createUser);
 app.delete('/api/user/:id', deleteUser);
 app.patch('/api/user/:id', patchUser);
 app.put('/api/user/:id', putUser);
+
+app.post('/api/task', createTask)
+app.get('/api/task', getTasks)
 
 
 app.get('/', (req, res) => {

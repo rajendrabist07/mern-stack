@@ -7,16 +7,14 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
-    // about: {
-    //     type: String,
-    //     required: true,
-    //     unique: true
-    // },
-    // field: {
-    //     type: String,
-    //     required: true,
-    //     enum: ["Full-Stack Developer", "MERN Stack Developer", "Node.js Developer", "React.js Developer", "Angular Developer", "Vue.js Developer", "Express.js Developer", "MongoDB Specialist", "JavaScript Expert"]
-    // }
+    about: {
+        type: String,
+
+    },
+    field: {
+        type: String,
+        enum: ["Full-Stack Developer", "MERN Stack Developer", "Node.js Developer", "React.js Developer", "Angular Developer", "Vue.js Developer", "Express.js Developer", "MongoDB Specialist", "JavaScript Expert"]
+    },
     email: {
         type: String,
         required: true,

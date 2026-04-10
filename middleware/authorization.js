@@ -3,15 +3,15 @@ import jwt from "jsonwebtoken";
 
 const authorization = async (req, res, next) => {
     try {
-        const { auth_token } = req.headers;
-
-        if (!auth_token) {
+        const { authorization } = req.headers;
+        if (!authorization) {
             return res.status(401).json({ message: "Unauthorized" })
         }
 
-        const data = jwt.verify(auth_token, "my_secret")
+        const data = jwt.verify(authorization, "my_secret")
 
         const user = await User.findById(data.id)
+        req.user = user
 
         if (!user) {
             return res.status(401).json({ message: "Unauthorized" })
@@ -20,6 +20,7 @@ const authorization = async (req, res, next) => {
         next();
 
     } catch (error) {
+        console.log(error)
         if (error.name === "JsonWebTokenError") {
             return res.status(401).json({ message: "Unauthorized" })
         }
