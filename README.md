@@ -10,7 +10,7 @@
 
 ## 🎯 Executive Summary
 
-This backend serves as the backbone of a modern MERN stack application, implementing industry-standard patterns for authentication, data management, and API design. With 15+ years of engineering experience distilled into every line of code, this project demonstrates production-ready practices that scale from startup MVPs to enterprise applications.
+This backend serves as the backbone of a modern MERN stack application, implementing industry-standard patterns for authentication, data management, and API design. This project demonstrates production-ready practices that scale from startup MVPs to enterprise applications.
 
 ## 📋 Table of Contents
 
